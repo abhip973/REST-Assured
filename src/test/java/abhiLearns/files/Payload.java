@@ -1,5 +1,10 @@
 package abhiLearns.files;
 
+import org.apache.commons.lang3.RandomStringUtils;
+
+import java.util.Random;
+import java.util.random.RandomGenerator;
+
 public class Payload {
     public String AddPlace() {
         return "{\n" +
@@ -51,5 +56,16 @@ public class Payload {
                 "    }\n" +
                 "  ]\n" +
                 "}";
+    }
+
+    public static String addBookToLibrary(String isbn){
+
+        String payload = "{\n" +
+                "    \"name\": \"Learn Selenium Automation with Java\",\n" +
+                "    \"isbn\": \""+isbn+"\",\n" +
+                "    \"aisle\": \"22\",\n" +
+                "    \"author\": \"John foe\"\n" +
+                "}";
+        return payload;
     }
 }
