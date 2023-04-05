@@ -1,4 +1,4 @@
-package abhiLearns;
+package abhiLearns.apiRequests;
 
 import abhiLearns.files.Payload;
 import io.restassured.path.json.JsonPath;

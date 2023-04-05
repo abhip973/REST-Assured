@@ -1,4 +1,4 @@
-package abhiLearns;
+package abhiLearns.apiRequests;
 
 import abhiLearns.files.Payload;
 import abhiLearns.files.ReUsableMethods;
