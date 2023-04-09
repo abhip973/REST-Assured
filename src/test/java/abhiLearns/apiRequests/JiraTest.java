@@ -17,7 +17,7 @@ public class JiraTest {
         RestAssured.baseURI = "http://localhost:8080/";
 
         SessionFilter session = new SessionFilter();
-        String cookie = given().header("Content-Type", "application/json").body("{\n" +
+        String cookie = given().relaxedHTTPSValidation().header("Content-Type", "application/json").body("{\n" +
                 "    \"username\": \"punj.abhishek1\",\n" +
                 "    \"password\": \"Rab@1234\"\n" +
                 "}").filter(session).when().post("rest/auth/1/session").then().assertThat().statusCode(200).extract().response().asString();
