@@ -1,4 +1,4 @@
-package abhiLearns.pojo;
+package abhiLearns.pojo.getCoursesResponse;
 
 import java.util.List;
 

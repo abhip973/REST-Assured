@@ -1,4 +1,4 @@
-package abhiLearns.pojo;
+package abhiLearns.pojo.getCoursesResponse;
 
 public class GetCoursesResponse {
     private String instructor;
