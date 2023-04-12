@@ -1,6 +1,6 @@
-package abhiLearns.pojo;
+package abhiLearns.pojo.getCoursesResponse;
 
-public class Mobile {
+public class WebAutomation {
     private String courseTitle;
     private String price;
 

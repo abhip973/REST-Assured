@@ -1,13 +1,9 @@
 package abhiLearns.apiRequests;
 
 import abhiLearns.files.ReUsableMethods;
-import abhiLearns.pojo.GetCoursesResponse;
+import abhiLearns.pojo.getCoursesResponse.GetCoursesResponse;
 import io.restassured.parsing.Parser;
 import io.restassured.path.json.JsonPath;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import static io.restassured.RestAssured.given;
 
