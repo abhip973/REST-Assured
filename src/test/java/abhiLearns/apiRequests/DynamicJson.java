@@ -13,10 +13,10 @@ public class DynamicJson {
 
     @Test
     public void addBook() {
-        RestAssured.baseURI="http://216.10.245.166";
+        RestAssured.baseURI = "http://216.10.245.166";
         String generatedString = RandomStringUtils.randomAlphabetic(5);
 
-        String response = given().header("Content-Type","application/json").body(Payload.addBookToLibrary(generatedString)).when()
+        String response = given().header("Content-Type", "application/json").body(Payload.addBookToLibrary(generatedString)).when()
                 .post("/Library/Addbook.php").then().assertThat().statusCode(200).extract().response().asString();
 
         JsonPath js = ReUsableMethods.rawToJson(response);

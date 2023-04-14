@@ -31,7 +31,7 @@ public class AddPlace {
 
         //Update Place
         given().queryParam("key", "qaclick123").queryParam("place_id", place_id).header("Content-Type", "application/json")
-                .body(payload.UpdatePlace(place_id,newAddress))
+                .body(payload.UpdatePlace(place_id, newAddress))
                 .when().put("/maps/api/place/update/json").then().log().all().assertThat().statusCode(200).body("msg", equalTo("Address successfully updated"));
 
         //Get Place

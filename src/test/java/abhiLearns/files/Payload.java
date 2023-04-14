@@ -32,7 +32,8 @@ public class Payload {
                 "    \"key\": \"qaclick123\"\n" +
                 "}";
     }
-    public static String coursePrice(){
+
+    public static String coursePrice() {
         return "{\n" +
                 "  \"dashboard\": {\n" +
                 "    \"purchaseAmount\": 910,\n" +
@@ -58,11 +59,11 @@ public class Payload {
                 "}";
     }
 
-    public static String addBookToLibrary(String isbn){
+    public static String addBookToLibrary(String isbn) {
 
         String payload = "{\n" +
                 "    \"name\": \"Learn Selenium Automation with Java\",\n" +
-                "    \"isbn\": \""+isbn+"\",\n" +
+                "    \"isbn\": \"" + isbn + "\",\n" +
                 "    \"aisle\": \"22\",\n" +
                 "    \"author\": \"John foe\"\n" +
                 "}";
