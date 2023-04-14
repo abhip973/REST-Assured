@@ -22,13 +22,13 @@ public class DynamicJsonDataProvider {
         System.out.println(js.getString("ID"));
 
         given().header("Content-Type", "application/json").body("{\n" +
-                "    \"ID\": \""+isbn+"22"+"\"\n" +
+                "    \"ID\": \"" + isbn + "22" + "\"\n" +
                 "}").when().post("/Library/DeleteBook.php").then().assertThat().statusCode(200);
     }
 
 
-    @DataProvider(name="booksDetails")
-    public Object[][] booksDetails(){
-        return new Object[][] {{"asbahd"}, {"eiqe"}, {"qwewof"}, {"aomqd"}};
+    @DataProvider(name = "booksDetails")
+    public Object[][] booksDetails() {
+        return new Object[][]{{"asbahd"}, {"eiqe"}, {"qwewof"}, {"aomqd"}};
     }
 }

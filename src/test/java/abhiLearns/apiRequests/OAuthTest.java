@@ -26,7 +26,7 @@ public class OAuthTest {
         String[] codeUrlSplit = codeUrl.split("code=");
         String[] codeSplit = codeUrlSplit[1].split("&");
 
-        System.out.println("Code = "+codeSplit[0]);
+        System.out.println("Code = " + codeSplit[0]);
 
         String accessTokenResponse = given().urlEncodingEnabled(false)
                 .queryParam("client_id", "692183103107-p0m7ent2hk7suguv4vq22hjcfhcr43pj.apps.googleusercontent.com")
@@ -38,7 +38,7 @@ public class OAuthTest {
 
         JsonPath accessTokenJson = ReUsableMethods.rawToJson(accessTokenResponse);
         String accessToken = accessTokenJson.getString("access_token");
-        System.out.println("Access Token"+accessToken);
+        System.out.println("Access Token" + accessToken);
 
         String response = given().queryParam("access_token", accessToken).when().get("https://rahulshettyacademy.com/getCourse.php")
                 .then().extract().response().asString();

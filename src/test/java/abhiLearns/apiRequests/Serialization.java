@@ -30,7 +30,7 @@ public class Serialization {
         placeRequest.setTypes(types);
         placeRequest.setLocation(location);
 
-        String resp = given().queryParam("key","qaclick123").body(placeRequest).log().all()
+        String resp = given().queryParam("key", "qaclick123").body(placeRequest).log().all()
                 .when().post("/maps/api/place/add/json").then().assertThat().statusCode(200).extract().response().asString();
 
         System.out.println(resp);

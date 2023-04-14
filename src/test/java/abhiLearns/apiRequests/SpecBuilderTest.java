@@ -35,10 +35,10 @@ public class SpecBuilderTest {
         placeRequest.setTypes(types);
         placeRequest.setLocation(location);
 
-         RequestSpecification req = new RequestSpecBuilder().setBaseUri("https://rahulshettyacademy.com").addQueryParam("key","qaclick123")
+        RequestSpecification req = new RequestSpecBuilder().setBaseUri("https://rahulshettyacademy.com").addQueryParam("key", "qaclick123")
                 .setContentType(ContentType.JSON).build();
 
-         ResponseSpecification res = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
+        ResponseSpecification res = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
 
         String resp = given().spec(req).body(placeRequest).log().all()
                 .when().post("/maps/api/place/add/json").then().spec(res).extract().response().asString();
