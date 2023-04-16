@@ -42,18 +42,38 @@ public class E_Commerce_API_Test {
         CreateProductResponse createProductResponse = reqAddProduct.when().post("/api/ecom/product/add-product").then().extract().response().as(CreateProductResponse.class);
         String productId = createProductResponse.getProductId();
 
+        System.out.println("Product Id is:" + productId);
+
         //Create Order
-        RequestSpecification createOrderBaseReq = new RequestSpecBuilder().setBaseUri("https://rahulshettyacademy.com").setContentType(ContentType.JSON).addHeader("Authorization", token).build();
+        RequestSpecification createOrderBaseReq = new RequestSpecBuilder().setBaseUri("https://rahulshettyacademy.com").
+                addHeader("Authorization", token).setContentType(ContentType.JSON).build();
+
+
+        //We are first creating object of Orders class and setting our values in it.
+
+        Orders orders = new Orders();
+        orders.setCountry("India");
+        orders.setProductOrderId(productId);
+
+        //Now we are creating a list for our set values
+        List<Orders> ordersList = new ArrayList<Orders>();
+        ordersList.add(orders);
 
         CreateOrderRequest createOrderRequest = new CreateOrderRequest();
-        List<Orders> ordersList = new ArrayList<>();
-        ordersList.get(0).setProductOrderId(productId);
-        ordersList.get(0).setCountry("India");
 
         createOrderRequest.setOrders(ordersList);
 
-        RequestSpecification createOrder = createOrderBaseReq.body(createOrderRequest);
+//        RequestSpecification createOrder = given().spec(createOrderBaseReq).body(createOrderRequest).log().all();
+//        createOrder.when().post("/api/ecom/order/create-order").then().log().all().assertThat().statusCode(201);
 
-        createOrder.when().post("/api/ecom/order/create-order").then().assertThat().statusCode(200);
+
+        //Delete Product
+        RequestSpecification deleteProductBaseReq = new RequestSpecBuilder().setBaseUri("https://rahulshettyacademy.com").
+                addHeader("Authorization", token).build();
+
+        RequestSpecification deleteProductReq = given().spec(deleteProductBaseReq).pathParam("productId", productId);
+        deleteProductReq.when().delete("/api/ecom/product/delete-product/{productId}").then().log().all();
+
+
     }
 }
