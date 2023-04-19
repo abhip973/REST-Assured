@@ -9,7 +9,6 @@ import org.testng.Assert;
 import static org.hamcrest.Matchers.*;
 import static io.restassured.RestAssured.*;
 
-
 public class AddPlace {
     public static void main(String[] args) {
 
